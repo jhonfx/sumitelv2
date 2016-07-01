@@ -24,30 +24,34 @@ class ArticuloController {
         log.debug("ya debuggea???")
         log.debug(params);
 
-        //def tuplas_articulos = JSON.parse(params.tuplas)
-        //log.debug(lista_num);
+        def tuplas_articulos = JSON.parse(params.tuplas)
+        
 
-        /*tuplas_articulos.each{
-            log.debug("${it.factura}")
+        TestSave testSave = new TestSave();
+
+        tuplas_articulos.each{
+            testSave.factura = new String("${it.factura}")
+            testSave.serie = new String("${it.series}")
+            testSave.descripcion = new String("${it.producto}")
+            /*log.debug("${it.factura}")
             log.debug("${it.series}")
-            log.debug("${it.producto}")
-        }*/
+            log.debug("${it.producto}")*/
+        }
 
         /*['Cat', 'Dog', 'Elephant'].each {
             println "Animal ${it}"
         }*/
 
+
+        /*println "ahora vamos a guardar un test"
         
-
-        //render params as JSON
-
-        println "ahora vamos a guardar un test"
-        TestSave testSave = new TestSave();
         testSave.factura = new String("902016");
         testSave.serie = new String("0750100369688");
-        testSave.descripcion = new String("FICHA AMIGO 100");
+        testSave.descripcion = new String("FICHA AMIGO 100");*/
 
         testSave.save(flush: true)
+
+        render params as JSON
 
 
         /*StringBuilder sql = new StringBuilder()
