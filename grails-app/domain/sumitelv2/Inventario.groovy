@@ -1,6 +1,6 @@
 package sumitelv2
 
-class Inventario {
+class Inventario implements Serializable{
 
     String descripcionInventario
 
@@ -15,4 +15,5 @@ class Inventario {
     String toString() {
       descripcionInventario
     }
+
 }

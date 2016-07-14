@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page import="sumitelv2.Inventario" %>
 <html>
     <head>
         <meta name="layout" content="main" />
@@ -28,6 +29,12 @@
             <g:form action="save">
                 <fieldset class="form">
                     <f:all bean="articulo"/>
+                    <g:link action="show" id="1">Book 1</g:link>
+
+                    <g:select name="inventarioId"
+                              from="${Inventario.findAll()}"
+                              optionKey="id" optionValue="descripcionInventario"
+                              noSelection="${['':'Seleccione...']}"/>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

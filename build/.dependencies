@@ -10,8 +10,8 @@ dependencies:
 - file:/Users/admin/.gradle/caches/modules-2/files-2.1/org.grails.plugins/hibernate4/5.0.8/6cf0f2bac9eaabe6653e3dd25390ecf287977f1f/hibernate4-5.0.8.jar
 - file:/Users/admin/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-ehcache/4.3.11.Final/cea0e6aba102c00cf899bd547c338fcf54468433/hibernate-ehcache-4.3.11.Final.jar
 - file:/Users/admin/.gradle/caches/modules-2/files-2.1/com.bertramlabs.plugins/asset-pipeline-grails/2.8.2/97bceaa633ee9f01b272e0b7fe9d960309ae43ab/asset-pipeline-grails-2.8.2.jar
-- file:/Users/admin/.gradle/caches/modules-2/files-2.1/org.grails.plugins/hibernate/4.3.10.7/252ea1ce72206ed6b4bf61f28eb3595152f0248c/hibernate-4.3.10.7.jar
 - file:/Users/admin/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.29/91798a4463050f61598122fe7fdc24aa196dfc0c/mysql-connector-java-5.1.29.jar
+- file:/Users/admin/.gradle/caches/modules-2/files-2.1/com.h2database/h2/1.4.191/dec3540178ea889b2871b0ed56db14bbec9cfdfc/h2-1.4.191.jar
 - file:/Users/admin/.gradle/caches/modules-2/files-2.1/org.grails/grails-plugin-testing/3.1.8/bfc4b2a9b03cd4b1fe1822d711752d080948e2c6/grails-plugin-testing-3.1.8.jar
 - file:/Users/admin/.gradle/caches/modules-2/files-2.1/org.grails.plugins/geb/1.0.1/e18899087e1202746f44193d6c7a1657afd9260e/geb-1.0.1.jar
 - file:/Users/admin/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-htmlunit-driver/2.47.1/e4a31a8f8c8a36074a506449c1b476af86de4a58/selenium-htmlunit-driver-2.47.1.jar
@@ -46,7 +46,6 @@ dependencies:
 - file:/Users/admin/.gradle/caches/modules-2/files-2.1/org.grails/grails-plugin-url-mappings/3.1.8/9bec37d0205df60dad7b0dc9d7139e886d0a6d96/grails-plugin-url-mappings-3.1.8.jar
 - file:/Users/admin/.gradle/caches/modules-2/files-2.1/org.grails/grails-plugin-interceptors/3.1.8/1d179bbf3d7d62d45ad5c6cc091841fe5c32db66/grails-plugin-interceptors-3.1.8.jar
 - file:/Users/admin/.gradle/caches/modules-2/files-2.1/org.grails/grails-plugin-async/3.1.8/43959e80d0b3119e08c3f8f0bd63ece768a02772/grails-plugin-async-3.1.8.jar
-- file:/Users/admin/.gradle/caches/modules-2/files-2.1/com.h2database/h2/1.4.191/dec3540178ea889b2871b0ed56db14bbec9cfdfc/h2-1.4.191.jar
 - file:/Users/admin/.gradle/caches/modules-2/files-2.1/org.grails/grails-web-common/3.1.8/8885ac4a29cafe14609e237fc21f936944399151/grails-web-common-3.1.8.jar
 - file:/Users/admin/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.18.1-GA/d9a09f7732226af26bf99f19e2cffe0ae219db5b/javassist-3.18.1-GA.jar
 - file:/Users/admin/.gradle/caches/modules-2/files-2.1/org.grails.plugins/fields/2.1.2/45019a9e6ad24418ad4c92b948b018ea613293e/fields-2.1.2.jar

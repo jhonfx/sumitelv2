@@ -5,7 +5,7 @@ import grails.transaction.Transactional
 import grails.converters.JSON
 import sumitelv2.TestSave
 
-@Transactional(readOnly = true)
+@Transactional(readOnly = false)
 class ArticuloController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -14,51 +14,63 @@ class ArticuloController {
         Alta masiva de articulos 
     */
     def altamasiva() {
-        render(view: 'altamasiva')
+        def name = 'juan'
+        render(view: 'altamasiva', model: [name: name])
     }
 
+    def list() {
+        def inventario = Inventario.findAll()
+        return [inventario: inventario]
+    }
 
-    @Transactional
-    def saveDataTest() {
+    def saveDataTest = {
 
         log.debug("ya debuggea???")
         log.debug(params);
 
         def tuplas_articulos = JSON.parse(params.tuplas)
-        
+        log.debug "Total de tuplas a guardar" + tuplas_articulos.size()
 
-        TestSave testSave = new TestSave();
-
-        tuplas_articulos.each{
-            testSave.factura = new String("${it.factura}")
-            testSave.serie = new String("${it.series}")
-            testSave.descripcion = new String("${it.producto}")
-            /*log.debug("${it.factura}")
-            log.debug("${it.series}")
-            log.debug("${it.producto}")*/
+        try {
+          tuplas_articulos.each{tupla->
+            TestSave testSave = new TestSave();
+            testSave.factura = new String(tupla.factura)
+            testSave.serie = new String(tupla.series)
+            testSave.descripcion = new String(tupla.producto)
+            testSave.save()
+            log.debug("id de objetos que se estan guardando "+ testSave.id)
+          
+          }
         }
-
-        /*['Cat', 'Dog', 'Elephant'].each {
-            println "Animal ${it}"
-        }*/
-
-
-        /*println "ahora vamos a guardar un test"
+        catch(Exception e) {
+          log.debug(e)
+        }
         
-        testSave.factura = new String("902016");
-        testSave.serie = new String("0750100369688");
-        testSave.descripcion = new String("FICHA AMIGO 100");*/
+        //render params as JSON
+        log.debug("vamonos a la gsp ver articulos")
+        render(view: "index")
+        
+    }
 
-        testSave.save(flush: true)
+    def verarticulos = { }
 
-        render params as JSON
-
-
-        /*StringBuilder sql = new StringBuilder()
-        sql.append("SELECT sts from sumitel_test_save sts");
+    def obtenerArticulos = {
+        StringBuilder sql = new StringBuilder()
+        sql.append(" SELECT m from TestSave m");
         log.debug(sql)
-        def resultSQL = TestSave.executeQuery(sql.toString())*/
-        
+        def resultSQL = TestSave.executeQuery(sql.toString())
+        log.debug(resultSQL.toString())
+
+        def tuplasJson = resultSQL.collect {
+          tuplas: [
+            factura: it.factura,
+            serie: it.serie,
+            descripcion: it.descripcion
+          ]
+        }
+        log.debug(tuplasJson)
+        def jsonData = [rows: tuplasJson]
+        render jsonData as JSON
     }
 
     def index(Integer max) {

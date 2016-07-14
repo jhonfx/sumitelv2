@@ -10,7 +10,7 @@ class Articulo {
     double costoPublico
     double costoUnitario
 
-    //static belongsTo = [inventario:Inventario]
+    static belongsTo = [inventario:Inventario]
 
     static mapping = {
       table 'sumitel_articulo'

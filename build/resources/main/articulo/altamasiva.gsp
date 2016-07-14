@@ -7,6 +7,7 @@
     
     <script type="text/javascript" src="${resource(dir: 'javascripts', file: 'jquery-1.8.3.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'javascripts', file: 'underscore.js')}"></script>
+    <script type="text/javascript" src="${resource(dir: 'javascripts/utils', file: 'sumitel_utils.js')}"></script>
 
 
     
@@ -22,28 +23,24 @@
     <script type="text/javascript">
       $(document).ready( function() {
 
-        $.fn.serializeObject = function()
-    {
-        var o = {};
-        var a = this.serializeArray();
-        $.each(a, function() {
-            if (o[this.name] !== undefined) {
-                if (!o[this.name].push) {
-                    o[this.name] = [o[this.name]];
-                }
-                o[this.name].push(this.value || '');
-            } else {
-                o[this.name] = this.value || '';
-            }
-        });
-        return o;
-    };
+    //     $.fn.serializeObject = function()
+    // {
+    //     var o = {};
+    //     var a = this.serializeArray();
+    //     $.each(a, function() {
+    //         if (o[this.name] !== undefined) {
+    //             if (!o[this.name].push) {
+    //                 o[this.name] = [o[this.name]];
+    //             }
+    //             o[this.name].push(this.value || '');
+    //         } else {
+    //             o[this.name] = this.value || '';
+    //         }
+    //     });
+    //     return o;
+    // };
 
         console.log("cargando");
-        // var source   = $("#entry-template").html();
-        // console.log(source);
-        // var template = Handlebars.compile(source);
-        // console.log(template);
         var toTable = [];
         
 
@@ -132,41 +129,6 @@
             });
           }
 
-        
-          // var criterios = { series: [{ id: 1}, { id: 2}], factura: format.fact, producto: format.prod }
-
-          // // var url = "${createLink(controller:'articulo', action:'getMasiveArticles', params:[idSucursal: 3])}";
-
-          // // location.href = url;
-
-          // $.ajax({
-          //       url:"${createLink(controller:'articulo', action:'getMasiveArticles', params:[idSucursal: 3])}",
-          //       data: {toTable},
-          //       type:"POST",
-          //       success:function (callback) {
-                    
-                    
-          //           if (callback.success) {
-          //               console.log("todo ok")
-          //               console.log(callback)
-          //           }
-          //           else {
-          //               console.log("no funciona")
-          //           }
-          //           // $(callback.text).dialog({
-          //           //     resizable:false,
-          //           //     modal:true,
-          //           //     hide:"none",
-          //           //     buttons:{
-          //           //         "Ok":okFunction
-          //           //     }
-          //           // });
-          //       },
-          //       error:function (json) {
-          //           console.log("pos hubo un error" + json)
-          //       },
-          //       dataType:"json"
-          //   });
         });
 
         $('#limpiar').click( function(e) {
@@ -193,11 +155,7 @@
           $.ajax({
                 url:"${createLink(controller:'articulo', action:'saveDataTest')}",
                 data: {'tuplas': JSON.stringify(toTable)},
-                // data: JSON.stringify({toTable}),
-                // data: { "demo": JSON.stringify(arraydemo)},
                 type:"POST",
-                // currentType: 'application/json',
-                
                 success:function (callback) {
                     
                     
@@ -263,7 +221,8 @@
     <div class="row">
       <div class="col-md-8"></div>
       <div class="col-md-4">
-        <button type="button" id="save_data" class="btn">GENERAR ORDEN</button>
+        ${name}
+        <button type="button" id="save_data" class="btn pull-right">GENERAR ORDEN</button>
       </div>
     </div>
   </div>

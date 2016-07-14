@@ -44,7 +44,7 @@ pre {
 
 }
 .navbar-default, .navbar-static-top {
-    background-color: #4D8618;
+    background-color: #3ba2e2;
     border: 0px;
 }
 a.navbar-brand {
@@ -59,17 +59,17 @@ a.navbar-brand {
     color: white !important;
 }
 .navbar-nav>li>a:hover {
-    background-color: #db4800 !important;
+    background-color: #3ba2e2 !important;
     color: white !important;
 }
 .navbar-nav>li>a {
-    color: #c0d3db;
+    color: #3ba2e2;
 }
 .navbar-default .navbar-toggle .icon-bar {
     background-color: white;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: #db4800;
+    background-color: #3ba2e2;
 }
 
 @media (min-width: 768px) {
@@ -432,7 +432,7 @@ h8 {
 }
 
 #footer {
-    background: #f2f2f2;
+    background: #1d8dd3;
     text-align: center;
     font-size: 14px;
     padding: 20px 0 30px;
